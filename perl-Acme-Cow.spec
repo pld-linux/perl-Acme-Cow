@@ -15,11 +15,11 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	f798f990d5e13c91d5cd85cc4e05d3b7
-Source1:        cowsay.sysconfig
-Source2:        cowsay.sh
-Source3:        cowsay.csh
-Patch0:         cowsay-PLD.patch
-Patch1:         cowsay-random.patch
+Source1:	cowsay.sysconfig
+Source2:	cowsay.sh
+Source3:	cowsay.csh
+Patch0:		cowsay-PLD.patch
+Patch1:		cowsay-random.patch
 URL:		http://www.nog.net/~tony/warez/cowsay.shtml
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -34,31 +34,31 @@ Acme::Cow - Perl interface to talking cow.
 Acme::Cow - interfejs perla dla gadaj±cej krowy.
 
 %package -n cowsay
-Summary:        A Configurable Speaking/Thinking Cow
-Summary(pl):    Konfigurowalna mówi±co-my¶l±ca krowa
-Version:        4.00
-Group:          Applications/Games
+Summary:	A Configurable Speaking/Thinking Cow
+Summary(pl):	Konfigurowalna mówi±co-my¶l±ca krowa
+Version:	4.00
+Group:		Applications/Games
 
 %description -n cowsay
 cowsay is basically a text filter. Send some text into it, and you get
 a cow saying your text. Very easy to use.
-                                                                                
+
 %description -n cowsay -l pl
 cowsay to prosty filtr tekstowy. Podaje mu siê trochê tekstu, a on
 wy¶wietla krowê mówi±c± ten tekst. Bardzo proste w u¿yciu.
 
 %package -n cowsay-on-login
-Summary:        Displays cow on login
-Summary(pl):    Wy¶wietlanie krowy przy logowaniu
+Summary:	Displays cow on login
+Summary(pl):	Wy¶wietlanie krowy przy logowaniu
 Version:	4.00
-Group:          Applications/Games
-Requires:       cowsay
+Group:		Applications/Games
+Requires:	cowsay
 Obsoletes:	cowsay-on-login-static
 
 %description -n cowsay-on-login
 If you want a cow to be displayed each time when you log on this
 package is what you need.
-                                                                                
+
 %description -n cowsay-on-login -l pl
 Je¶li chcesz, ¿eby krowa by³a wy¶wietlana przy ka¿dym logowaniu ten
 pakiet jest tym, czego potrzebujesz.
