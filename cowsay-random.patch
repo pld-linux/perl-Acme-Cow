@@ -1,22 +1,21 @@
-diff -ur cowsay-3.03/cowsay cowsay-3.03-/cowsay
---- cowsay-3.03/cowsay	Sun May 18 00:27:21 2003
-+++ cowsay-3.03-/cowsay	Sun May 18 00:27:11 2003
-@@ -43,10 +43,11 @@
+--- Acme-Cow-0.1/cowsay~	Sun May 18 12:42:29 2003
++++ Acme-Cow-0.1/cowsay	Sun May 18 12:46:11 2003
+@@ -35,10 +35,11 @@
      'W'		=>	40,
  );
  
--getopts('bde:f:ghlLnNpstT:wW:y', \%opts);
-+getopts('bde:f:ghlLnNprstT:wW:y', \%opts);
+-getopts('bde:f:ghlLnNpstT:vwW:y', \%opts);
++getopts('bde:f:ghlLnNprstT:vwW:y', \%opts);
  
- &display_usage if $opts{'h'};
- &list_cowfiles if $opts{'l'};
+ &display_usage() if ($opts{'h'} or $opts{'v'} or $opts{'?'});
+ &list_cowfiles() if $opts{'l'};
 +&set_random_cow if $opts{'r'};
  
- $borg = $opts{'b'};
- $dead = $opts{'d'};
-@@ -70,6 +71,26 @@
- print @balloon_lines;
- print $the_cow;
+ my $borg = $opts{'b'};
+ my $dead = $opts{'d'};
+@@ -69,6 +70,34 @@
+ $cow->wrap($opts{'W'});
+ $cow->print();
  
 +sub get_cow_list {
 +    my $basedir;
@@ -30,6 +29,14 @@ diff -ur cowsay-3.03/cowsay cowsay-3.03-/cowsay
 +	}
 +	closedir(COWDIR);
 +    }
++    for my $d (@INC) {
++	my @files = glob("$d/Acme/Cow/*.pm");
++	for my $file (@files) {
++	    next if (basename($file) eq "TextBalloon.pm");
++	    next if (basename($file) eq "Example.pm");
++	    push(@dirfiles, basename($file, ".pm"));
++	}
++    }
 +    return @dirfiles;
 +}
 +
@@ -40,33 +47,31 @@ diff -ur cowsay-3.03/cowsay cowsay-3.03-/cowsay
 +
  sub list_cowfiles {
      my $basedir;
-     my @dirfiles;
-@@ -181,7 +202,7 @@
- sub display_usage {
+     for my $d (split(/$pathsep/, $cowpath)) {
+@@ -156,7 +185,7 @@
  	die <<EOF;
- cow{say,think} version $version, (c) 1999 Tony Monroe
--Usage: $progname [-bdgpstwy] [-h] [-e eyes] [-f cowfile] 
-+Usage: $progname [-bdgpstwy] [-h] [-e eyes] [-f cowfile] [-r]
-           [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
- EOF
- }
-diff -ur cowsay-3.03/cowsay.1 cowsay-3.03-/cowsay.1
---- cowsay-3.03/cowsay.1	Sun May 18 00:27:21 2003
-+++ cowsay-3.03-/cowsay.1	Sun May 18 00:26:55 2003
-@@ -17,6 +17,7 @@
- .IR eye_string ]
- .RB [ \-f 
- .IR cowfile ]
-+.RB [ \-r ]
- .RB [ \-h ]
- .RB [ \-l ]
- .RB [ \-n ]
-@@ -107,6 +108,8 @@
- with the
- .B \-l
- switch.
-+.B \-r
-+option tells cowsay that you want random cow picture.
- .PP
- If the program is invoked as 
- .B cowthink 
+ cow{say,think} version $VERSION, (c) 1999-2002 Tony Monroe
+ 
+-Usage: $progname [-bdgpstwy] [-hv?] [-e eyes] [-f cowfile] [-l] [-n] 
++Usage: $progname [-bdgpstwy] [-hrv?] [-e eyes] [-f cowfile] [-l] [-n] 
+ 	[-T tongue] [-W wrapcolumn] [message]
+ 
+ $rcs_id
+@@ -171,7 +200,7 @@
+ 
+ =head1 SYNOPSIS
+ 
+-Usage: $progname [B<-bdgpstwy>] [B<-hv?>] [B<-e> eyes] [B<-f> I<cowfile>] 
++Usage: $progname [B<-bdgpstwy>] [B<-hrv?>] [B<-e> eyes] [B<-f> I<cowfile>] 
+           [B<-l>] [B<-n>] [B<-T> I<tongue>] [B<-W> I<wrapcolumn>] [I<message>]
+ 
+ =head1 DESCRIPTION
+@@ -222,6 +251,8 @@
+ cowfiles installed as modules (in C<@INC>) and on the current
+ C<COWPATH>, invoke cowsay with the B<-l> switch.
+ 
++The B<-r> option makes cowsay select random cowfile (or cowmodule).
++
+ If the program is invoked as cowthink (or any word that has "think"
+ as a substring) then the cow will think its message instead of
+ saying it.
