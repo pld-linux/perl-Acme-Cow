@@ -6,8 +6,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Acme
 %define	pnam	Cow
-Summary:	Acme::Cow perl module - talking cow
-Summary(pl):	Modu³ perla Acme::Cow - gadaj±ca krowa
+Summary:	Acme::Cow Perl module - talking cow
+Summary(pl):	Modu³ Perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
 Release:	0.9
