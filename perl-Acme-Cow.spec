@@ -84,13 +84,13 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install-cows \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix}
 
-rm -f $RPM_BUILD_ROOT/%{_bindir}/cowthink
-ln -s %{_bindir}/cowsay $RPM_BUILD_ROOT/%{_bindir}/cowthink
+rm -f $RPM_BUILD_ROOT%{_bindir}/cowthink
+ln -s %{_bindir}/cowsay $RPM_BUILD_ROOT%{_bindir}/cowthink
 
-install -d $RPM_BUILD_ROOT/%{_sysconfdir}/{profile.d,sysconfig}
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/{profile.d,sysconfig}
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/cowsay
-install %{SOURCE2}	$RPM_BUILD_ROOT%{_sysconfdir}/profile.d/
-install %{SOURCE3}	$RPM_BUILD_ROOT%{_sysconfdir}/profile.d/
+install %{SOURCE2}	$RPM_BUILD_ROOT%{_sysconfdir}/profile.d
+install %{SOURCE3}	$RPM_BUILD_ROOT%{_sysconfdir}/profile.d
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -104,7 +104,7 @@ rm -rf $RPM_BUILD_ROOT
 #%%{perl_vendorarch}/...
 %attr(755,root,root) %{_bindir}/cowpm
 %{_mandir}/man3/*
-%{_mandir}/man1/cowpm.1p.gz
+%{_mandir}/man1/cowpm.1p*
 %{_datadir}/cows
 
 %files -n cowsay
@@ -116,5 +116,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n cowsay-on-login
 %defattr(644,root,root,755)
-%attr(755,root,root) /%{_sysconfdir}/profile.d/cowsay.*sh
-%config(noreplace) %verify(not size mtime md5) /%{_sysconfdir}/sysconfig/cowsay
+%attr(755,root,root) %{_sysconfdir}/profile.d/cowsay.*sh
+%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/cowsay
