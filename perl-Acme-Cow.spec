@@ -14,7 +14,7 @@ Summary:	Acme::Cow perl module - talking cow
 Summary(pl):	Modu³ perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -87,6 +87,9 @@ ln -sf cowsay cowthink
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%{__make} install-cows \
+	PREFIX=$RPM_BUILD_ROOT%{_prefix}
+
 install -d $RPM_BUILD_ROOT/%{_sysconfdir}/{profile.d,sysconfig}
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/cowsay
 install %{SOURCE2}	$RPM_BUILD_ROOT%{_sysconfdir}/profile.d/
@@ -105,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/cowpm
 %{_mandir}/man3/*
 %{_mandir}/man1/cowpm.1p.gz
+%{_datadir}/cows
 
 %files -n cowsay
 %defattr(644,root,root,755)
