@@ -6,3 +6,14 @@
  ##
  ## cow{say,think}
  ##
+--- Acme-Cow-0.1/cowsay~	Sun May 18 12:37:24 2003
++++ Acme-Cow-0.1/cowsay	Sun May 18 12:34:08 2003
+@@ -16,7 +16,7 @@
+ 
+ my $VERSION = "4.0";
+ my $progname = basename($0);
+-my $cowpath = $ENV{'COWPATH'} || ".";
++my $cowpath = $ENV{'COWPATH'} || "/usr/share/cows";
+ 
+ ## One of these days, we'll get it ported to Windows.  Yeah, right.
+ 
