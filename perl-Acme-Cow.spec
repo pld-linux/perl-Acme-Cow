@@ -10,7 +10,7 @@ Summary:	Acme::Cow perl module - talking cow
 Summary(pl):	Modu³ perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
-Release:	0.4
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
