@@ -11,7 +11,8 @@ Summary(pl):	Modu³ Perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
 Release:	0.9
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	f798f990d5e13c91d5cd85cc4e05d3b7
@@ -28,10 +29,18 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Acme::Cow - Perl interface to talking cow.
+Acme::Cow is the logical evolution of the old cowsay program.  Cows
+are derived from a base class (Acme::Cow) or from external files.
+
+Cows can be made to say or think many things, optionally filling and
+justifying their text out to a given margin.
 
 %description -l pl
-Acme::Cow - interfejs perla dla gadaj±cej krowy.
+Acme::Cow wyewoluowa³ logicznie ze starego programu cowsay. Krowy
+pochodz± z klasy bazowej (Acme::Cow) lub z plików zewnêtrznych.
+
+Krowy mog± mówiæ i my¶leæ o wielu rzeczach, opcjonalnie dope³niaj±c i
+wyrównuj±c swój tekst do zadanego marginesu.
 
 %package -n cowsay
 Summary:	A Configurable Speaking/Thinking Cow
@@ -49,7 +58,7 @@ wy¶wietla krowê mówi±c± ten tekst. Bardzo proste w u¿yciu.
 
 %package -n cowsay-on-login
 Summary:	Displays cow on login
-Summary(pl):	Wy¶wietlanie krowy przy logowaniu
+Summary(pl):	Pokazywanie siê krowy przy logowaniu
 Version:	4.00
 Group:		Applications/Games
 Requires:	cowsay
@@ -60,8 +69,8 @@ If you want a cow to be displayed each time when you log on this
 package is what you need.
 
 %description -n cowsay-on-login -l pl
-Je¶li chcesz, ¿eby krowa by³a wy¶wietlana przy ka¿dym logowaniu ten
-pakiet jest tym, czego potrzebujesz.
+Gdy siê chce, ¿eby krowa pokazywa³a siê przy ka¿dym logowaniu ten
+pakiet jest tym, czego potrzeba.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{_pacver}
