@@ -14,6 +14,7 @@ Release:	0.9
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	f798f990d5e13c91d5cd85cc4e05d3b7
 Source1:        cowsay.sysconfig
 Source2:        cowsay.sh
 Source3:        cowsay.csh
