@@ -1,0 +1,17 @@
+--- cowsay-3.03/cowsay.orig	Sat May 10 15:33:44 2003
++++ cowsay-3.03/cowsay	Sat May 10 15:34:22 2003
+@@ -1,4 +1,4 @@
+-#%BANGPERL%
++#!/usr/bin/perl
+ 
+ ##
+ ## Cowsay 3.03
+@@ -16,7 +16,7 @@
+ $progname = basename($0);
+ $eyes = "oo";
+ $tongue = "  ";
+-$cowpath = $ENV{'COWPATH'} || '%PREFIX%/share/cows';
++$cowpath = '/usr/share/cows';
+ @message = ();
+ $thoughts = "";
+ 
