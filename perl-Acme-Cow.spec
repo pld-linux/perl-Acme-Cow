@@ -4,8 +4,8 @@
 #
 %define		_pacver	0.1
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Acme
-%define	pnam	Cow
+%define		pdir	Acme
+%define		pnam	Cow
 Summary:	Acme::Cow Perl module - talking cow
 Summary(pl):	Modu³ Perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
@@ -29,7 +29,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Acme::Cow is the logical evolution of the old cowsay program.  Cows
+Acme::Cow is the logical evolution of the old cowsay program. Cows
 are derived from a base class (Acme::Cow) or from external files.
 
 Cows can be made to say or think many things, optionally filling and
