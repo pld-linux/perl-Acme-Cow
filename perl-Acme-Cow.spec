@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# don't perform "make test"
 #
 %define		_pacver	0.1
 %include	/usr/lib/rpm/macros.perl
@@ -73,7 +73,7 @@ pakiet jest tym, czego potrzebujesz.
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
