@@ -3,8 +3,7 @@
 # _without_tests - do not perform "make test"
 #
 # TODO: 
-# - add random option to sysconfig
-# - update patch with random cows
+# - update random patch (when there's cowthink -r doesn't work)
 #
 %define		_pacver	0.1
 %include	/usr/lib/rpm/macros.perl
@@ -14,7 +13,7 @@ Summary:	Acme::Cow perl module - talking cow
 Summary(pl):	Modu³ perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
-Release:	0.3
+Release:	0.4
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
