@@ -2,9 +2,6 @@
 # Conditional build:
 # _without_tests - do not perform "make test"
 #
-# TODO: 
-# - update random patch (when there's cowthink -r doesn't work)
-#
 %define		_pacver	0.1
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Acme
@@ -40,7 +37,6 @@ Summary:        A Configurable Speaking/Thinking Cow
 Summary(pl):    Konfigurowalna mówi±co-my¶l±ca krowa
 Version:        4.00
 Group:          Applications/Games
-Requires:	%{name}
 
 %description -n cowsay
 cowsay is basically a text filter. Send some text into it, and you get
@@ -56,7 +52,8 @@ Summary(pl):    Wy¶wietlanie krowy przy logowaniu
 Version:	4.00
 Group:          Applications/Games
 Requires:       cowsay
-                                                                                
+Obsoletes:	cowsay-on-login-static
+
 %description -n cowsay-on-login
 If you want a cow to be displayed each time when you log on this
 package is what you need.
@@ -80,14 +77,14 @@ pakiet jest tym, czego potrzebujesz.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-rm -f cowthink
-ln -sf cowsay cowthink
-
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__make} install-cows \
 	PREFIX=$RPM_BUILD_ROOT%{_prefix}
+
+rm -f $RPM_BUILD_ROOT/%{_bindir}/cowthink
+ln -s %{_bindir}/cowsay $RPM_BUILD_ROOT/%{_bindir}/cowthink
 
 install -d $RPM_BUILD_ROOT/%{_sysconfdir}/{profile.d,sysconfig}
 install %{SOURCE1}	$RPM_BUILD_ROOT%{_sysconfdir}/sysconfig/cowsay
