@@ -4,6 +4,6 @@
 TEXT="I Love PLD"
 # What eyes of cow
 #EYES="@@"
-# Which cow should be displayed
+# Which cow should be displayed (see `ls /usr/share/cows/`)
 #COW="eyes.cow"
 
