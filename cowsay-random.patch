@@ -1,0 +1,72 @@
+diff -ur cowsay-3.03/cowsay cowsay-3.03-/cowsay
+--- cowsay-3.03/cowsay	Sun May 18 00:27:21 2003
++++ cowsay-3.03-/cowsay	Sun May 18 00:27:11 2003
+@@ -43,10 +43,11 @@
+     'W'		=>	40,
+ );
+ 
+-getopts('bde:f:ghlLnNpstT:wW:y', \%opts);
++getopts('bde:f:ghlLnNprstT:wW:y', \%opts);
+ 
+ &display_usage if $opts{'h'};
+ &list_cowfiles if $opts{'l'};
++&set_random_cow if $opts{'r'};
+ 
+ $borg = $opts{'b'};
+ $dead = $opts{'d'};
+@@ -70,6 +71,26 @@
+ print @balloon_lines;
+ print $the_cow;
+ 
++sub get_cow_list {
++    my $basedir;
++    my @dirfiles = ();
++    for my $d (split(/$pathsep/, $cowpath)) {
++	opendir(COWDIR, $d) || die "$0: Cannot open $d\n";
++	for my $file (readdir COWDIR) {
++	    if ($file =~ s/\.cow$//) {
++		push(@dirfiles, $file);
++	    }
++	}
++	closedir(COWDIR);
++    }
++    return @dirfiles;
++}
++
++sub set_random_cow {
++    my @cows = &get_cow_list;
++    $opts{'f'} = $cows[int(rand(scalar @cows))];
++}
++
+ sub list_cowfiles {
+     my $basedir;
+     my @dirfiles;
+@@ -181,7 +202,7 @@
+ sub display_usage {
+ 	die <<EOF;
+ cow{say,think} version $version, (c) 1999 Tony Monroe
+-Usage: $progname [-bdgpstwy] [-h] [-e eyes] [-f cowfile] 
++Usage: $progname [-bdgpstwy] [-h] [-e eyes] [-f cowfile] [-r]
+           [-l] [-n] [-T tongue] [-W wrapcolumn] [message]
+ EOF
+ }
+diff -ur cowsay-3.03/cowsay.1 cowsay-3.03-/cowsay.1
+--- cowsay-3.03/cowsay.1	Sun May 18 00:27:21 2003
++++ cowsay-3.03-/cowsay.1	Sun May 18 00:26:55 2003
+@@ -17,6 +17,7 @@
+ .IR eye_string ]
+ .RB [ \-f 
+ .IR cowfile ]
++.RB [ \-r ]
+ .RB [ \-h ]
+ .RB [ \-l ]
+ .RB [ \-n ]
+@@ -107,6 +108,8 @@
+ with the
+ .B \-l
+ switch.
++.B \-r
++option tells cowsay that you want random cow picture.
+ .PP
+ If the program is invoked as 
+ .B cowthink 
