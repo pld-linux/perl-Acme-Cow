@@ -1,0 +1,9 @@
+# cowsay set file
+#
+# What cow will say
+TEXT="I Love PLD"
+# What eyes of cow
+#EYES="@@"
+# Which cow should be displayed
+#COW="eyes.cow"
+
