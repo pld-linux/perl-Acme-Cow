@@ -1,5 +1,7 @@
 # cowsay set file
 #
+# type (lower case please) "say" or "think"
+TYPE="think"
 # What cow will say
 TEXT="I Love PLD"
 # What eyes of cow
