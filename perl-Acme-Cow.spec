@@ -14,7 +14,7 @@ Summary:	Acme::Cow perl module - talking cow
 Summary(pl):	Modu³ perla Acme::Cow - gadaj±ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
-Release:	0.2
+Release:	0.3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.nog.net/~tony/warez/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -69,7 +69,7 @@ pakiet jest tym, czego potrzebujesz.
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{_pacver}
 %patch0 -p1
-#%patch1 -p1
+%patch1 -p1
 
 %build
 %{__perl} Makefile.PL \
