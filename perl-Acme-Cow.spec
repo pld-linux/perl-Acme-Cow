@@ -22,7 +22,7 @@ Source3:	cowsay.csh
 Patch0:		cowsay-PLD.patch
 Patch1:		cowsay-random.patch
 URL:		http://www.nog.net/~tony/warez/cowsay.shtml
-BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-Text-Template
 BuildArch:	noarch
