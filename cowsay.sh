@@ -8,7 +8,11 @@ if [ -n "$EYES" ]; then
 fi
 
 if [ -n "$COW" ]; then
-	COW="-f $COW"
+	if [ $COW = "random" ]; then
+		COW="-r"
+	else
+		COW="-f $COW"
+	fi
 fi
 cow$TYPE $EYES $COW $TEXT
 echo

@@ -8,4 +8,5 @@ TEXT="I Love PLD"
 #EYES="@@"
 # Which cow should be displayed (see `ls /usr/share/cows/`)
 #COW="eyes.cow"
-
+# Set COW to "random" if you want to display random cow.
+#COW="random"
