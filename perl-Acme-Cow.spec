@@ -29,8 +29,8 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Acme::Cow is the logical evolution of the old cowsay program. Cows
-are derived from a base class (Acme::Cow) or from external files.
+Acme::Cow is the logical evolution of the old cowsay program. Cows are
+derived from a base class (Acme::Cow) or from external files.
 
 Cows can be made to say or think many things, optionally filling and
 justifying their text out to a given margin.
@@ -125,5 +125,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n cowsay-on-login
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_sysconfdir}/profile.d/cowsay.*sh
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/sysconfig/cowsay
+%attr(755,root,root) /etc/profile.d/cowsay.*sh
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/cowsay
