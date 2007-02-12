@@ -7,7 +7,7 @@
 %define		pdir	Acme
 %define		pnam	Cow
 Summary:	Acme::Cow Perl module - talking cow
-Summary(pl):	Modu³ Perla Acme::Cow - gadaj±ca krowa
+Summary(pl.UTF-8):   ModuÅ‚ Perla Acme::Cow - gadajÄ…ca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
 Release:	0.9
@@ -35,16 +35,16 @@ derived from a base class (Acme::Cow) or from external files.
 Cows can be made to say or think many things, optionally filling and
 justifying their text out to a given margin.
 
-%description -l pl
-Acme::Cow wyewoluowa³ logicznie ze starego programu cowsay. Krowy
-pochodz± z klasy bazowej (Acme::Cow) lub z plików zewnêtrznych.
+%description -l pl.UTF-8
+Acme::Cow wyewoluowaÅ‚ logicznie ze starego programu cowsay. Krowy
+pochodzÄ… z klasy bazowej (Acme::Cow) lub z plikÃ³w zewnÄ™trznych.
 
-Krowy mog± mówiæ i my¶leæ o wielu rzeczach, opcjonalnie dope³niaj±c i
-wyrównuj±c swój tekst do zadanego marginesu.
+Krowy mogÄ… mÃ³wiÄ‡ i myÅ›leÄ‡ o wielu rzeczach, opcjonalnie dopeÅ‚niajÄ…c i
+wyrÃ³wnujÄ…c swÃ³j tekst do zadanego marginesu.
 
 %package -n cowsay
 Summary:	A Configurable Speaking/Thinking Cow
-Summary(pl):	Konfigurowalna mówi±co-my¶l±ca krowa
+Summary(pl.UTF-8):   Konfigurowalna mÃ³wiÄ…co-myÅ›lÄ…ca krowa
 Version:	4.00
 Group:		Applications/Games
 
@@ -52,13 +52,13 @@ Group:		Applications/Games
 cowsay is basically a text filter. Send some text into it, and you get
 a cow saying your text. Very easy to use.
 
-%description -n cowsay -l pl
-cowsay to prosty filtr tekstowy. Podaje mu siê trochê tekstu, a on
-wy¶wietla krowê mówi±c± ten tekst. Bardzo proste w u¿yciu.
+%description -n cowsay -l pl.UTF-8
+cowsay to prosty filtr tekstowy. Podaje mu siÄ™ trochÄ™ tekstu, a on
+wyÅ›wietla krowÄ™ mÃ³wiÄ…cÄ… ten tekst. Bardzo proste w uÅ¼yciu.
 
 %package -n cowsay-on-login
 Summary:	Displays cow on login
-Summary(pl):	Pokazywanie siê krowy przy logowaniu
+Summary(pl.UTF-8):   Pokazywanie siÄ™ krowy przy logowaniu
 Version:	4.00
 Group:		Applications/Games
 Requires:	cowsay
@@ -68,8 +68,8 @@ Obsoletes:	cowsay-on-login-static
 If you want a cow to be displayed each time when you log on this
 package is what you need.
 
-%description -n cowsay-on-login -l pl
-Gdy siê chce, ¿eby krowa pokazywa³a siê przy ka¿dym logowaniu ten
+%description -n cowsay-on-login -l pl.UTF-8
+Gdy siÄ™ chce, Å¼eby krowa pokazywaÅ‚a siÄ™ przy kaÅ¼dym logowaniu ten
 pakiet jest tym, czego potrzeba.
 
 %prep
