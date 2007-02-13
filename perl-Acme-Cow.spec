@@ -7,7 +7,7 @@
 %define		pdir	Acme
 %define		pnam	Cow
 Summary:	Acme::Cow Perl module - talking cow
-Summary(pl.UTF-8):   Moduł Perla Acme::Cow - gadająca krowa
+Summary(pl.UTF-8):	Moduł Perla Acme::Cow - gadająca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
 Release:	0.9
@@ -44,7 +44,7 @@ wyrównując swój tekst do zadanego marginesu.
 
 %package -n cowsay
 Summary:	A Configurable Speaking/Thinking Cow
-Summary(pl.UTF-8):   Konfigurowalna mówiąco-myśląca krowa
+Summary(pl.UTF-8):	Konfigurowalna mówiąco-myśląca krowa
 Version:	4.00
 Group:		Applications/Games
 
@@ -58,7 +58,7 @@ wyświetla krowę mówiącą ten tekst. Bardzo proste w użyciu.
 
 %package -n cowsay-on-login
 Summary:	Displays cow on login
-Summary(pl.UTF-8):   Pokazywanie się krowy przy logowaniu
+Summary(pl.UTF-8):	Pokazywanie się krowy przy logowaniu
 Version:	4.00
 Group:		Applications/Games
 Requires:	cowsay
