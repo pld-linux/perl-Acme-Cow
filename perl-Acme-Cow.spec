@@ -10,7 +10,7 @@ Summary:	Acme::Cow Perl module - talking cow
 Summary(pl.UTF-8):	Moduł Perla Acme::Cow - gadająca krowa
 Name:		perl-Acme-Cow
 Version:	%{_pacver}
-Release:	0.9
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -47,6 +47,7 @@ Summary:	A Configurable Speaking/Thinking Cow
 Summary(pl.UTF-8):	Konfigurowalna mówiąco-myśląca krowa
 Version:	4.00
 Group:		Applications/Games
+Suggests:	perldoc
 
 %description -n cowsay
 cowsay is basically a text filter. Send some text into it, and you get
