@@ -3,7 +3,6 @@
 %bcond_without	tests	# don't perform "make test"
 #
 %define		_pacver	0.1
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Acme
 %define		pnam	Cow
 Summary:	Acme::Cow Perl module - talking cow
